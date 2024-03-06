@@ -3,9 +3,20 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
   todos: [{
     id: 1,
-    title: "Todo 1",
+    title: "Drink water",
     completed: false
-  }]
+  },
+  {
+    id: 2,
+    title: "Eat fruits and vegetables",
+    completed: true
+  },
+  {
+    id: 3,
+    title: "Go to gym",
+    completed: false
+  }
+]
 };
 
 export const todoSlice = createSlice({
