@@ -19,10 +19,9 @@ const Todo = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">Todos</h1>
       <AddTodo />
       <div className="border border-gray-300 rounded-md p-4">
-      <h2 className="text-lg font-bold mb-2 text-center">Task List</h2>
+        <h2 className="text-lg font-bold mb-2 text-center">Task List</h2>
         <table className="w-full">
           <thead>
             <tr>
@@ -33,11 +32,11 @@ const Todo = () => {
           </thead>
           <tbody>
             {todos?.map((todo) => (
-              <tr key={todo.id} className="border-b border-gray-300">
+              <tr key={todo.id} className="border-b border-gray-300 text-center">
                 <td className={`py-2 px-4 ${todo.completed ? 'line-through' : ''}`}>{todo.title}</td>
                 <td className="py-2 px-4">{todo.completed ? 'Completed' : 'Not Completed'}</td>
                 <td className="py-2 px-4">
-                  <div className="flex items-center space-x-4">
+                  <div className="flex space-x-4 justify-center">
                     {editTodoId === todo.id ? (
                       <>
                         <UpdateTodo todo={todo} />

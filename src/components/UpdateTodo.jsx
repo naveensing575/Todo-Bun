@@ -14,14 +14,14 @@ const UpdateTodo = ({ todo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center justify-between">
+    <form onSubmit={handleSubmit} className="flex items-center justify-between px-2 space-x-4">
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow mr-2 text-black"
+        className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow text-black"
       />
-      <div className="flex items-center">
+      <div className="flex items-center space-x-2">
         <label htmlFor="completed" className="mr-2">Completed:</label>
         <input
           type="checkbox"
