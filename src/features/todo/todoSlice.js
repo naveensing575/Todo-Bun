@@ -4,7 +4,7 @@ const initialState = {
   todos: [{
     id: 1,
     title: "Todo 1",
-    completed: false // Adding completed property
+    completed: false
   }]
 };
 
@@ -13,21 +13,20 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      const todo = {
-        id: nanoid(),
-        title: action.payload.title,
-        completed: false
-      };
-      state.todos.push(todo);
+      const { title } = action.payload;
+      if (title.trim() !== "") {
+        const todo = {
+          id: nanoid(),
+          title,
+          completed: false
+        };
+        state.todos.push(todo);
+      } else {
+        console.error('Todo title cannot be empty.');
+      }
     },
     removeTodo: (state, action) => {
       state.todos = state.todos.filter(todo => todo.id !== action.payload.id);
-    },
-    toggleTodo: (state, action) => {
-      const todo = state.todos.find(todo => todo.id === action.payload.id);
-      if (todo) {
-        todo.completed = !todo.completed; // Toggle completed property
-      }
     },
     updateTodo: (state, action) => {
       const todo = state.todos.find(todo => todo.id === action.payload.id);
@@ -42,5 +41,5 @@ export const todoSlice = createSlice({
   }
 });
 
-export const { addTodo, removeTodo, toggleTodo, updateTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, updateTodo, deleteTodo } = todoSlice.actions;
 export default todoSlice.reducer;

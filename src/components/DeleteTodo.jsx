@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "../features/todo/todoSlice";
+import { FaTrashAlt } from "react-icons/fa";
 
 const DeleteTodo = ({ id }) => {
   const dispatch = useDispatch();
@@ -10,7 +11,9 @@ const DeleteTodo = ({ id }) => {
   };
 
   return (
-    <button onClick={handleDelete} className="delete-button bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">Delete</button>
+    <button onClick={handleDelete} className="delete-button bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+      <FaTrashAlt className="text-lg" />
+    </button>
   );
 };
 
