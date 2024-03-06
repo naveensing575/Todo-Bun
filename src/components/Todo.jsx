@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import AddTodo from "./AddTodo";
 import DeleteTodo from "./DeleteTodo";
-import { FaEdit, FaTimes } from "react-icons/fa"; // Import FaTimes for cross icon
+import { FaEdit, FaTimes } from "react-icons/fa";
 import UpdateTodo from "./UpdateTodo";
 
 const Todo = () => {
